@@ -23,7 +23,7 @@ def lambda_handler(event, context):
             'Values': [str('running' if 'stop' == parameters['EC2Action'] or 'reboot' == parameters['EC2Action'] else 'stopped')]
         }
     ]
-
+    print parameters
     #filter the instances
     instances = ec2.instances.filter(Filters=filters)
 
